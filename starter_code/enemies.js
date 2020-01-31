@@ -6,7 +6,7 @@ class Enemies {
         this._velX = 1;
         this._posX = canvasW;
         this._image = new Image();
-        this._image.src = "./img/SkeletonWalkRigth.png";
+        this._image.src = "./starter_code/img/SkeletonWalkRigth.png";
         this._posY = enemiesPos;
         this._image.frames = 13;
         this._image.framesIndex = 0;
@@ -53,7 +53,7 @@ class Bird extends Enemies {
         this._posX = canvasW;
         this._height = 50;
         this._image = new Image();
-        this._image.src = "./img/birder.png";
+        this._image.src = "./starter_code/img/birder.png";
         this._posY = enemiesPos;
         this._velY = 7;
         this._velX = 3;

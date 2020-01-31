@@ -9,7 +9,7 @@ class Bullet {
         this._hSize = 30;
         this._velX = 10;
         this._image = new Image()
-        this._image.src = "./img/Bullets.png";
+        this._image.src = "./starter_code/img/Bullets.png";
     }
 
     draw() {
@@ -32,7 +32,7 @@ class BadBullets extends Bullet {
         this._hSize = 80;
         this._velX = 10;
         this._image = new Image()
-        this._image.src = "./img/bossBullet.png";
+        this._image.src = "./starter_code/img/bossBullet.png";
     }
 
     draw() {

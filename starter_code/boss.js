@@ -6,7 +6,7 @@ class Boss {
         this._velX = 1;
         this._posX = gameWidth - this._width;
         this._image = new Image();
-        this._image.src = "./img/Boss.png";
+        this._image.src = "./starter_code/img/Boss.png";
         this._posY = 0 + this._height;
         this._posY0 = 0 + this._height;
         this._image.frames = 10;

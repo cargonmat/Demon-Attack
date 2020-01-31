@@ -7,7 +7,7 @@ class Finish {
         this._posY = 0
         this._velX = 1
         this._image = new Image();
-        this._image.src = "./img/endLine.png";
+        this._image.src = "./starter_code/img/endLine.png";
     }
 
     draw() {
