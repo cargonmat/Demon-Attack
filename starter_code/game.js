@@ -47,9 +47,10 @@ const Game = {
         this.reset();
 
         this.interval = setInterval(() => {
+            console.log(this.player._bullets)
             this.randomizer();
-            if (this.framesCounter > 1000) this.framesCounter = 0;
-            if (this.timer > 500) this.framesCounter = 0;
+            (this.framesCounter > 1000) ? this.framesCounter = 0: null;
+            (this.timer > 500) ? this.framesCounter = 0: null;
             this.framesCounter++;
             this.drawAll();
             this.moveAll();
@@ -57,20 +58,13 @@ const Game = {
             this.generateEnemies();
             this.clearAll();
             this.floorCollision();
-            if (this.isCollision()) {
-                this.gameOver();
-            };
+            (this.isCollision()) ? this.gameOver(): null;
             this.bulletCollision();
             this.position();
             this.endGame();
-            if (this.protection) {
-                this.protectimer++
-            }
+            (this.protection) ? this.protectimer++: null;
             if (this.isDeath()) {
-
-                if (!this.protection) {
-                    this.gameOver()
-                }
+                (!this.protection) ? this.gameOver(): null;
             };
             this.isBossDeath();
             this.Shield();
@@ -129,20 +123,13 @@ const Game = {
 
     clearAll() {
         this.enemies.forEach((enm, idx) => {
-            if (enm._posX + enm._width <= 0) {
-                this.enemies.splice(idx, 1);
-            }
+            (enm._posX + enm._width <= 0) ? this.enemies.splice(idx, 1): null;
         });
         this.player._bullets.forEach((bll, idx) => {
-            if (bll._posX >= this.width) {
-                this.player._bullets.splice(this.player._bullets.indexOf(bll), idx);
-            }
+            (bll._posX >= this.width) ? this.player._bullets.splice(this.player._bullets.indexOf(bll), idx): null;
         });
         this.boss._bossBullets.forEach((bll, idx) => {
-            if (bll._posX + 50 <= 0) {
-                this.boss._bossBullets.splice(this.boss._bossBullets.indexOf(bll), idx);
-
-            }
+            (bll._posX + 50 <= 0) ? this.boss._bossBullets.splice(this.boss._bossBullets.indexOf(bll), idx): null;
         });
     },
 
@@ -219,7 +206,6 @@ const Game = {
 
     floorCollision() {
         document.onkeyup = e => {
-            // if (e.keyCode === 40) {}
             return this.floor.some(
                 flr => {
                     let bool = this.player._posY + this.player._height + 100 >= flr._posY &&
@@ -282,7 +268,7 @@ const Game = {
         this.boss._bossBullets._velX *= 1.5
         this.score += 50
     },
-    
+
     Shield() {
         if (
             this.player._posX + this.player._width - 50 >= this.powerup._posX &&
