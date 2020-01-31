@@ -47,9 +47,6 @@ const Game = {
         this.reset();
 
         this.interval = setInterval(() => {
-            console.log(this.protection)
-            console.log(this.protectimer)
-            console.log(this.timer)
             this.randomizer();
             if (this.framesCounter > 1000) this.framesCounter = 0;
             if (this.timer > 500) this.framesCounter = 0;
@@ -142,7 +139,7 @@ const Game = {
             }
         });
         this.boss._bossBullets.forEach((bll, idx) => {
-            if (bll._posX <= 0) {
+            if (bll._posX + 50 <= 0) {
                 this.boss._bossBullets.splice(this.boss._bossBullets.indexOf(bll), idx);
 
             }
@@ -253,7 +250,6 @@ const Game = {
     },
 
     isDeath() {
-
         return this.boss._bossBullets.some(
             bssbll =>
             this.player._posX + this.player._width - 60 >= bssbll._posX + 10 &&
@@ -287,19 +283,16 @@ const Game = {
     },
     Shield() {
         if (
-
             this.player._posX + this.player._width - 50 >= this.powerup._posX &&
             this.player._posY + this.player._height - 50 >= this.powerup._posY &&
             this.player._posX <= this.powerup._posX + this.powerup._width &&
             this.player._posY <= this.powerup._posY + this.powerup._height
         ) {
-
             this.protection = true
             setTimeout(() => {
                 this.protection = false
             }, 8000)
             this.timer++
         }
-
     },
 }
