@@ -19,10 +19,10 @@ class Enemies {
     draw(framesCounter) {
         this._ctx.drawImage(
             this._image,
-            this._image.framesIndex * Math.floor(this._image.width / this._image.frames), //Punto x donde empieza a recortar
-            0, //Punto y donde empieza a recortar
-            Math.floor((this._image.width) / this._image.frames), //Punto x donde termina de recortar
-            this._image.height, //Punto y donde termina de recortar
+            this._image.framesIndex * Math.floor(this._image.width / this._image.frames),
+            0,
+            Math.floor((this._image.width) / this._image.frames),
+            this._image.height,
             this._posX,
             this._posY,
             this._width,
@@ -38,7 +38,7 @@ class Enemies {
 
     animate(framesCounter) {
         if (framesCounter % 5 == 0) {
-            this._image.framesIndex++; //Cambiamos el frame de la imagen cada 5 fps.
+            this._image.framesIndex++;
             if (this._image.framesIndex == 13) {
                 this._image.framesIndex = 0;
             }
@@ -66,10 +66,10 @@ class Bird extends Enemies {
     move() {
         this._posX -= this._velX
 
-        this._posY += this._velY //Añadimos velY linear para que caigan
+        this._posY += this._velY
 
         if (this._posY + this._height >= this._gameHeight || this._posY <= 0) {
-            this._velY *= -1 //Si llegan al suelo invertimos su velocidad para que "reboten"
+            this._velY *= -1
         }
     }
 }

@@ -198,7 +198,8 @@ const Game = {
                         if (bool) {
                             return this.killEnemies(idx, idxB)
                         }
-                    })
+                    }
+                )
             }
         )
     },
@@ -281,6 +282,7 @@ const Game = {
         this.boss._bossBullets._velX *= 1.5
         this.score += 50
     },
+    
     Shield() {
         if (
             this.player._posX + this.player._width - 50 >= this.powerup._posX &&
