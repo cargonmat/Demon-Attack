@@ -6,7 +6,7 @@ class Enemies {
         this._velX = 1;
         this._posX = canvasW;
         this._image = new Image();
-        this._image.src = "./starter_code/img/SkeletonWalkRigth.png";
+        this._image.src = "./img/SkeletonWalkRigth.png";
         this._posY = enemiesPos;
         this._image.frames = 13;
         this._image.framesIndex = 0;

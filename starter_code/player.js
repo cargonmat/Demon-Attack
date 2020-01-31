@@ -4,7 +4,7 @@ class Player {
         this._gameWidth = w;
         this._gameHeight = h;
         this._image = new Image();
-        this._image.src = "./starter_code/img/Gunner_Blue.png";
+        this._image.src = "./img/Gunner_Blue.png";
         this._width = 100;
         this._height = 140;
         this._posX = 0 + this._width;
@@ -18,11 +18,11 @@ class Player {
         this._keys = keys;
         this._bullets = [];
         this._soundShoot = new Audio();
-        this._soundShoot.src = "./starter_code/sound/fireSound.wav";
+        this._soundShoot.src = "./sound/fireSound.wav";
         this._soundJump = new Audio();
-        this._soundJump.src = "./starter_code/sound/jumpSound.wav";
+        this._soundJump.src = "./sound/jumpSound.wav";
         this._soundDown = new Audio();
-        this._soundDown.src = "./starter_code/sound/downSound.wav";
+        this._soundDown.src = "./sound/downSound.wav";
         this._timer = 0;
         this.setListeners();
         this._shootingDelay = false

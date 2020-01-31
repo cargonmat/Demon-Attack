@@ -6,7 +6,7 @@ class Powerup {
         this._velX = 1;
         this._posX = canvasW;
         this._image = new Image();
-        this._image.src = "./starter_code/img/potion.png";
+        this._image.src = "./img/potion.png";
         this._posY = Math.random() * gameHeight;
         this._velX = 3;
         this._velY = 6;
